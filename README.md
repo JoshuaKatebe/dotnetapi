@@ -1,10 +1,17 @@
-# .NET API Service Starter
+Run these commands to install packages 
+dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore
+dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Swashbuckle.AspNetCore
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet tool install --global dotnet-ef
 
-This is a minimal .NET API service starter based on [Google Cloud Run Quickstart](https://cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-dotnet-service).
+Next run these commands to setup the database 
+dotnet ef migrations add InitialCreate
+dotnet ef database update
 
-## Getting Started
-
-Server should run automatically when starting a workspace. To run manually, run:
-```sh
-dotnet watch --urls=http://localhost:3000
-```
+Next run this command to build and check for errors
+dotnet build
+dotnet run
